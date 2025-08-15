@@ -9,8 +9,7 @@ window.rowconfigure(0,minsize=800, weight=1)
 def open_file():
     """Open a file for editing"""
     filepath=askopenfilename(
-        filetypes=[("Text Files", "*.txt", ("All Files", "*.*"))]
-    )
+        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")])
     if not filepath:
             return
     txt_edit.delete(1.0,END)
@@ -24,8 +23,7 @@ def open_file():
 def save_file():
     filepath=asksaveasfilename(
             defaultextension="txt",
-            filetypes=[("Text Files", "*.txt"), ("All Files, ","*.*")]
-    )
+            filetypes=[("Text Files", "*.txt"), ("All Files, ","*.*")])
     if not filepath:
             return
     with open (filepath,"w") as output_file:
